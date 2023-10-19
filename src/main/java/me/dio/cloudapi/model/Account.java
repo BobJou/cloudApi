@@ -22,10 +22,10 @@ public class Account {
 	
 	private String agency;
 	
-	@Column(nullable = false, precision = 2,scale = 13)
+	@Column(nullable = false, precision = 13,scale = 2)
 	private BigDecimal balance;
 	
-	@Column(precision = 2,scale = 13,name= "additional_limit")
+	@Column(precision = 13,scale = 2,name= "additional_limit")
 	private BigDecimal limit;
 	
 	public String getNumber() {
