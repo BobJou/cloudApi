@@ -30,11 +30,11 @@ public class UserController {
 		return ResponseEntity.ok(user);
 		
 	}
-	
+
 	@PostMapping
 	public ResponseEntity<User> create(@RequestBody User user){
 		var userCreated = userService.create(user);
-		URI location = ServletUriComponentsBuilder.fromCurrentContextPath().path("/{id}")
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 				.buildAndExpand(userCreated.getId())
 				.toUri();
 		return ResponseEntity.created(location).body(userCreated);
